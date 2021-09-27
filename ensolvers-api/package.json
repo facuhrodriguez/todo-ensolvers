@@ -1,0 +1,16 @@
+{
+  "name": "ensolvers-api",
+  "version": "1.0.0",
+  "description": "API for Ensolvers challenge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:reload": "nodemon server.js"
+  },
+  "author": "Facundo Hernán Rodríguez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.13"
+  }
+}
