@@ -1,16 +1,16 @@
 const { Sequelize } = require("sequelize");
+const Task = require("./task");
 
-const config = require("../../db/config");
+const config = require("../../../config/config");
+const db = new Sequelize(config.database, config.username, config.password, {
+  host: config.host,
+  port: config.port,
+  dialect: config.dialect,
+  logging: console.log,
+});
 
-const db = new Sequelize(
-  config.connection.database,
-  config.connection.user,
-  config.connection.password,
-  {
-    host: config.connection.host,
-    dialect: config.client,
-    logging: true,
-  }
-);
+const dbTask = new Task(db);
 
-module.exports = { db, authenticate };
+db.Sequelize = Sequelize;
+
+module.exports = { db };

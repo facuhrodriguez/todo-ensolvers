@@ -5,7 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:reload": "nodemon src/server.js"
+    "start:reload": "nodemon src/server.js",
+    "db:create": "sequelize db:create",
+    "db:drop": "sequelize db:drop",
+    "db:sync": "node src/api/models/scripts/dbSync.js"
   },
   "author": "Facundo Hernán Rodríguez",
   "license": "ISC",
@@ -16,5 +19,8 @@
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
   }
 }
